@@ -4,7 +4,8 @@ ON b.user_id = u.id;
 
 SELECT * FROM properties p
 LEFT JOIN reviews r
-ON p.id = r.property_id;
+ON p.id = r.property_id
+ORDER BY p.id;
 
 SELECT * FROM users u
 FULL OUTER JOIN bookings b
