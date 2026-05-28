@@ -33,7 +33,7 @@
 SELECT *
 FROM Booking b
 JOIN User u
-    ON b.user_id = u.user_id
+    ON b.user_id = u.user_id AND user_id IS NOT NULL
 JOIN Property p
     ON b.property_id = p.property_id
 LEFT JOIN Payment pay
@@ -51,7 +51,7 @@ EXPLAIN
 SELECT *
 FROM Booking b
 JOIN User u
-    ON b.user_id = u.user_id
+    ON b.user_id = u.user_id AND user_id IS NOT NULL
 JOIN Property p
     ON b.property_id = p.property_id
 LEFT JOIN Payment pay
@@ -159,7 +159,7 @@ SELECT
     pay.payment_date
 FROM Booking b
 JOIN User u
-    ON b.user_id = u.user_id
+    ON b.user_id = u.user_id AND user_id IS NOT NULL
 JOIN Property p
     ON b.property_id = p.property_id
 LEFT JOIN Payment pay
